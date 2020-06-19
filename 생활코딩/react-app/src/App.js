@@ -50,7 +50,7 @@ class App extends Component {
           id:this.max_content_id,
           title:_title,
           desc:_desc
-        })
+        });
         this.setState({
           contents:_contents,
           mode:'read',

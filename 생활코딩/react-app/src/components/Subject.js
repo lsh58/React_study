@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReadContent from "./components/ReadContent"
 
 class Subject extends Component{
   render(){
