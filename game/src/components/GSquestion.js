@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class GS_question extends Component{
+class GSquestion extends Component{
     render(){
       return(
         <article>
@@ -10,5 +10,5 @@ class GS_question extends Component{
     }
   }
 
-  export default GS_question;
+  export default GSquestion;
   
