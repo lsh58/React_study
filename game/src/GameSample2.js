@@ -1,49 +1,49 @@
 import React, { useState, useRef } from 'react';
 
-function GameSample() {
-  const [first, setFirst] = useState(Math.ceil(Math.random() * 9));
-  const [second, setSecond] = useState(Math.ceil(Math.random() * 9));
+function GameSample2() {
+  const [text, setText] = useState('아이유');
   const [value, setValue] = useState('');
   const [result, setResult] = useState('');
+  const [list, setList] = useState([]);
   const input = useRef(null);
 
-  const onClick = e => {
+  const _onChange = e => {
+    setValue(e.target.value);
+  };
+
+  const _onSubmit = e => {
     e.preventDefault();
 
     setValue('');
     input.current.focus();
 
-    if (first * second === parseInt(value)) {
-      setFirst(Math.ceil(Math.random() * 9));
-      setSecond(Math.ceil(Math.random() * 9));
+    if (text[text.length - 1] === value[0]) {
+      setText(value);
+      setResult('성공');
 
-      setResult('정답입니다.');
+      setList([...list, value]);
     } else {
-      setResult('틀렸습니다.');
+      setResult('실패');
+      setList([]);
     }
   };
 
-  const onChange = e => {
-    setValue(e.target.value);
-  };
-
   return (
-    <div className="box">
-      <div>
-        {first} * {second} = ?
-      </div>
-      <form>
+    <>
+      <div>{text}</div>
+      <form onSubmit={_onSubmit}>
         <input
-          type="number"
-          value={value}
-          onChange={onChange}
+          type="text"
           ref={input}
+          value={value}
+          onChange={_onChange}
         ></input>
-        <button onClick={onClick}>answer</button>
+        <button type="submit">Insert!</button>
       </form>
       <div>{result}</div>
-    </div>
+      <div>{list}</div>
+    </>
   );
 }
 
-export default GameSample;
+export default GameSample2;
