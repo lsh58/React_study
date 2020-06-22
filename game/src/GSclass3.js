@@ -2,7 +2,20 @@ import React, {Component} from 'react';
 import GSquestion from "./components/GSquestion";
 import GSanswer from "./components/GSanswer";
 
-class GSclass extends Component {
+const GameSample3 = () => {
+  //숫자 네 개를 겹치지 않고 랜덤하게 뽑는 함수
+
+  const candidate = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const array = [];
+
+  for (let i = 0; i < 4; i++) {
+    const chosen = candidate.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
+    array.push(chosen);
+  }
+
+  return array;
+};
+class GSclass3 extends Component {
   constructor(props){ //초기화담당
     super(props);
     this.state = {
@@ -41,4 +54,4 @@ class GSclass extends Component {
 }
 
 
-export default GSclass;
+export default GSclass3;

@@ -6,8 +6,9 @@ class GSclass2 extends Component {
   constructor(props){ //초기화담당
     super(props);
     this.state = {
-      text : '아이유',
-      result :''
+      text : '아이스',
+      result :'',
+      list:''
     }
   }
   render() {
@@ -17,7 +18,9 @@ class GSclass2 extends Component {
         <GS2answer onSubmit={function(_answer){
           if (this.state.text[this.state.text.length - 1] === _answer[0]) {
             this.setState({
+              text: _answer,
               result: '성공',
+              list: this.state.list+this.state.text
             });
           } else{
             this.setState({
@@ -27,6 +30,7 @@ class GSclass2 extends Component {
         }.bind(this)}>
         </GS2answer>
         <div>{this.state.result}</div>
+        <div>{this.state.list}</div>
       </div>
       );
     }

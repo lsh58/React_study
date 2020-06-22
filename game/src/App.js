@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import GSclass2 from './GSclass2';
+import GSclass3 from './GSclass3';
 
 
 function App() {
   return (
     <>
-      <GSclass2 />
+      <GSclass3 />
     </>
   );
 }
