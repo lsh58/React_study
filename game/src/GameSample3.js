@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import Try from './Try';
 
-const GameSample3 = () => {
+const getNumbers = () => {
   //숫자 네 개를 겹치지 않고 랜덤하게 뽑는 함수
-
   const candidate = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const array = [];
-
   for (let i = 0; i < 4; i++) {
     const chosen = candidate.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
     array.push(chosen);
   }
-
   return array;
 };
 
-const NumberBaseball = () => {
+const GameSample3 = () => {
   const [result, setResult] = useState(''); 
   const [value, setValue] = useState('');
   const [answer, setAnswer] = useState(getNumbers); // [1,3,5,7]
@@ -78,7 +75,7 @@ const NumberBaseball = () => {
 
   const onChangeInput = e => {
     setValue(e.target.value);
-  };
+  }; 
 
   return (
     <>
