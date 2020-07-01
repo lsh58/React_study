@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+
+function solution(array, commands) {
+    var answer = [];
+    var temp = [];
+    for(var a=0; a<commands.length; a++){
+        var i = commands[a][0];
+        var j = commands[a][1];
+        var k = commands[a][2];
+        temp = array.slice(i-1,j);
+        temp.sort(function(a, b) { // 오름차순
+        return a - b;
+        });
+        answer.push(temp[k-1]);
+    }
+    return answer;
+}
+solution();
+
+console.log(solution())
+
+</script>
+
+<body>
+    
+</body>
+</html>

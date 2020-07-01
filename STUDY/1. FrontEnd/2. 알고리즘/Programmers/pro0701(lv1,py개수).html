@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    
+
+    function solution(s){
+    var answer = true;
+    var temp = [];
+    var p = [];
+    var y = [];
+
+    temp = s.split("");
+    for(var i=0; i<temp.length; i++){
+        if(temp[i] =="p" || temp[i] == "P"){
+            p.push(temp[i]);
+        }
+        if(temp[i] =="y" || temp[i] == "Y"){
+            y.push(temp[i]);
+        }
+    }
+
+    p.length == y.length ? answer=true : answer=false;
+    
+    return answer;
+}
+
+
+
+
+</script>
+
+<body>
+    
+</body>
+</html>
