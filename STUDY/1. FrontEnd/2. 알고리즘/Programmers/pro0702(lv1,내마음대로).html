@@ -3,35 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documenㄴt</title>
+    <title>Document</title>
 </head>
 <script>
 
     var answer = [];
-    var strings = ["sun","bed","car"];
+    var strings = ['abce','abcd','cdx'];
     var n = 1;
-    var temp=[];
 
-    for(var i=0; i<strings.length; i++){
-        temp.push(strings[i][n]);
+    function compare(a, b) {
+        if (a.charAt(n) > b.charAt(n)) return 1;
+        else if (b.charAt(n) > a.charAt(n)) return -1;
+        else if (a.charAt(n) == b.charAt(n)) {
+           return a.localeCompare(b);
+        }
     }
+    answer = strings.sort(compare);
 
-    console.log(temp);
+    console.log(strings.sort(compare));
+    console.log(strings[0].charAt(1) == strings[1].charAt(1) );
+    console.log(strings[0].localeCompare(strings[1]));
 
-
-
-
-// function solution(strings, n) {
-//     var answer = [];
-//     var strings = [sun, bed, car];
-//     var n = 1;
-    
-
-//     return answer;
-// }
-// solution();
-
-// console.log(solution);
 
 
 </script>
