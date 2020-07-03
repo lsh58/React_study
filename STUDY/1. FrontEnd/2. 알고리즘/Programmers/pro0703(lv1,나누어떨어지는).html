@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function solution(arr, divisor) {
+        var answer = [];
+        answer = arr.filter(
+            function (x) {
+                if (x % divisor == 0) {
+                    return x;
+                }
+            }
+        );
+        answer.sort(function (a, b) {
+            return a - b;
+        });
+        if (answer == 0) {
+            return [-1];
+        } else {
+            return answer;
+        }
+    }
+
+</script>
+
+<body>
+    
+</body>
+</html>
