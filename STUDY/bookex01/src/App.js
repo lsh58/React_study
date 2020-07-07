@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import EventPractie from './EventPractie';
+import IterationSample from './IterationSample';
 
-function App() {
+class App extends Component{
+  render(){
   return (
-   <EventPractie/>
+   <IterationSample/>
   );
+  }
 }
 
 export default App;

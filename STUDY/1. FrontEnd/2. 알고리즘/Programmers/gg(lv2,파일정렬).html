@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+//예시문제
+    var exam = ["F-5 Freedom Fighter", "B-50 Superfortress", "A-10 Thunderbolt II", "F-14 Tomcat"]
+    var head = []; // head부분으로 오름차순정렬하기 위한 배열
+    var headIndex = []; //head 부분 추출하기위한 index값 배열로 저장하기위한 배열
+    var answer= [];
+
+    var longest=exam.reduce(function (a, b) { return a.length > b.length ? a : b; });
+    //reduce함수를 이용해 가장 길이가 긴 문자열을 담아둔다.
+    //가징 긴 길이를 찾는 이유 : head,number,tail로 자를때 가장 긴 길이값으로 반복하려고
+
+    for(var i=0; i<exam.length; i++){
+        for(var j=0; j<longest.length; j++){
+            if(exam[i][j]>=0 && exam[i][j]<=9){
+                headIndex.push(j); // 숫자가 시작하는 index값 출력. 이를통해 head부분만 추출가능
+                break;
+            }
+        }
+    }
+    console.log(headIndex); // [2, 2, 2, 2]
+
+    for(var i=0; i<exam.length; i++){
+        head.push(exam[i].substring(0,headIndex[i])); //headIndex값을 통해 head부분만 head배열에 담음
+    }   
+    console.log(head); //["F-", "B-", "A-", "F-"]
+
+    //head배열을 기준으로 exam 배열을 재정렬함.
+
+    for(var i=0; i<exam.length; i++){
+        answer = exam.sort(function(a, b) { // 오름차순
+            if (a.slice(0,headIndex[exam.indexOf(a)]) > b.slice(0,headIndex[i])) return 1;
+            return a - b;
+        });
+    }
+    console.log(answer);
+
+    console.log(exam[0].slice(0,2))
+
+    function compare(a, b) {
+        if (a.charAt(n) > b.charAt(n)) return 1;
+        else if (b.charAt(n) > a.charAt(n)) return -1;
+        else if (a.charAt(n) == b.charAt(n)) {
+           return a.localeCompare(b);
+        }
+    }
+    answer = strings.sort(compare);
+
+</script>
+
+<body>
+    
+</body>
+</html>

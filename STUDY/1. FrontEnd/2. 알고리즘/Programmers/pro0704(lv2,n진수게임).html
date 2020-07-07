@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+//예시문제
+    var n = 2; //진법
+    var t = 4; //미리 구할 숫자의 갯수
+    var m = 2; //플레이어수3
+    var p = 1; //순서
+    var answer="";
+
+    var every = [];
+    for(var i=0; i<t*m; i++){
+        every.push(i.toString(n)) //진법변환
+    }
+    //다 이어서 문자열로 만들기
+    var add = every.join("");
+    
+    // 말해야 하는 숫자 출력하기
+    for(var j=0; j<t*m; j++){
+        if(j%m===p-1){ // 몇번째인지 조건 구하기 (index가 0부터 시작하므로)
+            answer = answer + add[j].toUpperCase(); //A~F때문에 
+        }
+    }
+    console.log(answer)
+
+</script>
+
+<body>
+    
+</body>
+</html>
