@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+var x = 13;
+
+function solution(x) {
+    var answer = true;
+    var arr = x.toString().split("");
+    var add = 0;
+    for(var i=0; i<arr.length; i++){
+        add += parseInt(arr[i])
+    }
+    return (x%add === 0) ? answer : !answer;
+}
+console.log(solution(x));
+
+</script>
+<body>
+    
+</body>
+</html>

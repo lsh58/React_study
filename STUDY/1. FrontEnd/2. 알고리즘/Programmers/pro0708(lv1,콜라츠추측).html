@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+var num = 6;
+var count = 0;
+
+function solution(num) {
+    var answer = 0;
+    call();
+    function call(){
+        if(num === 1){
+            return;
+        }
+        else if(num%2 === 0){
+            num=num/2;
+            count++;
+            call();
+        }
+        else if(num%2 === 1){
+            num=num*3+1;
+            count++;
+            call();
+        }
+    }
+    if(count>500){
+        return -1;
+    }else{
+        return count;
+    }
+}
+
+console.log(solution(num)+"답");
+console.log(count);
+
+</script>
+<body>
+    
+</body>
+</html>
