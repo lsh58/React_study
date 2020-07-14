@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+var n = 5;
+var arr1 = [9,20,28,18,11];
+var arr2 = [30,1,21,17,28];
+
+function solution(n, arr1, arr2) {
+    var answer = [];
+    function two(num){
+        var two1 = [];
+        var two2 = [];
+        var answer01= [];
+        two1 = arr1[num].toString(2).split("");
+        var length1 = n-two1.length;
+        if(two1.length < n){
+            for(var i = 0; i<length1; i++){
+                two1.unshift("0")
+            }
+        }
+        two2 = arr2[num].toString(2).split("");
+        var length2 = n-two2.length;
+        if(two2.length < n){
+            for(var i = 0; i<length2; i++){
+                two2.unshift("0")
+            }
+        }
+        for(var i= 0; i<two1.length; i++){
+            if(two1[i] == 1 || two2[i] == 1){
+                answer01.push("#");
+            }
+            else{
+                answer01.push(" ");
+            }
+        }
+        var k = answer01.join("");
+        answer.push(k);
+    }
+    for(var i = 0; i<n; i++){
+        two(i);
+    }
+    return answer;
+}
+
+solution(n,arr1,arr2);
+
+var a = [1, 2, 3];
+var b = a;
+b[0] = 5;
+console.log(a, b);
+
+
+출처: https://im-developer.tistory.com/18 [Code Playground]
+
+
+</script>
+<body>
+    
+</body>
+</html>
