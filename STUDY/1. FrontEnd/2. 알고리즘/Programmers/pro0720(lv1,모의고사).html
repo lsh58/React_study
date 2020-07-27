@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+var answers = [1,2,3,4,5,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3];
+
+
+
+function solution(answers) {
+    var answer = [];
+
+    var a = [1, 2, 3, 4, 5];
+    var b = [2, 1, 2, 3, 2, 4, 2, 5];
+    var c = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
+
+    var countA =0;
+    var countB =0;
+    var countC =0;
+
+    for(var j=0; j<answers.length; j++){
+        if(a[j%a.length]==answers[j]){
+            countA++;
+        }
+        if(b[j%b.length]==answers[j]){
+            countB++;
+        }
+        if(c[j%c.length]==answers[j]){
+            countC++;
+        }
+    }
+    if(Math.max(countA,countB,countC)== countA){
+        answer.push(1);
+    }
+    if(Math.max(countA,countB,countC)== countB){
+        answer.push(2);
+    }
+    if(Math.max(countA,countB,countC)== countC){
+        answer.push(3);
+    }
+    return answer;
+}
+solution(answers);
+
+
+
+</script>
+<body>
+    
+</body>
+</html>

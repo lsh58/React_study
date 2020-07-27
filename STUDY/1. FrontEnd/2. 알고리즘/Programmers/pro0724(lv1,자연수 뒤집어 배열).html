@@ -6,12 +6,18 @@
     <title>Document</title>
 </head>
 <script>
+    
+var n = 12345;
 
-function solution(s) {
-    return ((s.length===4||s.length===6)&&/^[0-9]+$/.test(s)) ? true : false;
+function solution(n) {
+    var answer = [];
+    var m=String(n)
+    for(var i=0; i<m.length; i++){
+        answer.push(parseInt(m.substring(m.length-i,m.length-1-i)));
+    }
+    return answer;
 }
-
-
+solution(n);
 
 </script>
 <body>

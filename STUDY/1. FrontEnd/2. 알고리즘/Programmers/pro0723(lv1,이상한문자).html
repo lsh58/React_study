@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    
+var s="try hello world";
+
+function solution(s) {
+    var answer = [];
+    var arr=[];
+    var arr2=[];
+    arr.push(s.split(" "));
+    for(var j=0; j<arr[0].length; j++){
+        for(var i=0; i<arr[0][j].length; i++){
+            if(arr[0][j].charCodeAt(i)>=97){
+                if(i%2 ==1){
+                    arr2.push(arr[0][j].charCodeAt(i));
+                }else{
+                    arr2.push(arr[0][j].charCodeAt(i)-32);
+                }
+            }
+            else{
+                if(i%2 ==1){
+                    arr2.push(arr[0][j].charCodeAt(i)+32);
+                }else{
+                    arr2.push(arr[0][j].charCodeAt(i));
+                }
+            }
+        }
+        arr2.push(32);
+    }
+
+    for(var k=0; k<arr2.length-1; k++){
+        answer.push(String.fromCharCode(arr2[k]));
+    }
+    return answer.join("");
+}
+solution(s);
+
+</script>
+<body>
+    
+</body>
+</html>

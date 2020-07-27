@@ -7,11 +7,19 @@
 </head>
 <script>
 
-function solution(s) {
-    return ((s.length===4||s.length===6)&&/^[0-9]+$/.test(s)) ? true : false;
+var x=2;
+var n=5;
+
+function solution(x, n) {
+    var answer = [];
+
+    for(var i=0; i<n; i++){
+        answer.push(x+x*i);
+    }
+
+    return answer;
 }
-
-
+console.log(solution(x,n));
 
 </script>
 <body>

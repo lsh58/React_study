@@ -6,12 +6,19 @@
     <title>Document</title>
 </head>
 <script>
+    
+var n = 123;
 
-function solution(s) {
-    return ((s.length===4||s.length===6)&&/^[0-9]+$/.test(s)) ? true : false;
+function solution(n)
+{
+    var answer = 0;
+    var arr=String(n).split("");
+    for(var i=0; i<arr.length;i++){
+        answer += parseInt(arr[i]);
+    }
+    return answer;
 }
-
-
+solution(n);
 
 </script>
 <body>

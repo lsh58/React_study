@@ -6,11 +6,14 @@
     <title>Document</title>
 </head>
 <script>
-
-function solution(s) {
-    return ((s.length===4||s.length===6)&&/^[0-9]+$/.test(s)) ? true : false;
+    
+function solution(arr) {
+    var sum=0;
+    for(var i=0; i<arr.length; i++){
+        sum += arr[i]
+    }
+    return sum/arr.length 
 }
-
 
 
 </script>

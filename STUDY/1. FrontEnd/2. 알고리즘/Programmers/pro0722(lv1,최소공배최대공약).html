@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    
+var n = 4;
+var m = 150;
+function solution(n, m) {
+    var answer = [];
+    var minN = n;
+    var minM = m;
+    var maxN = n;
+    var maxM = m;
+
+    if(n<=m){
+        while(minN>0){
+            if((m%minN==0)&&(n%minN==0)){
+                break;
+            }
+            minN--;
+        }
+        answer.push(minN);
+        if(m%maxN==0){
+            answer.push(m);
+        }else{
+            for(var i=1; i<=maxN; i++){
+                if(m*i%maxN==0){
+                    answer.push(m*i);
+                    break;
+                }
+            }
+        }
+    }
+    else{
+        while(minM>0){
+            if((m%minM==0)&&(n%minM==0)){
+                break;
+            }
+            minM--;
+        }
+        answer.push(minM);
+        if(n%maxM==0){
+            answer.push(n);
+        }else{
+            for(var i=1; i<=maxM; i++){
+                if(n*i%maxM==0){
+                    answer.push(n*i);
+                    break;
+                }
+            }
+        }
+    }
+    console.log(answer);
+    return answer;
+}
+solution(n,m);
+
+</script>
+<body>
+    
+</body>
+</html>

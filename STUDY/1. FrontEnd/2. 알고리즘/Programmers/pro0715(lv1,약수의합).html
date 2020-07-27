@@ -6,12 +6,19 @@
     <title>Document</title>
 </head>
 <script>
-
-function solution(s) {
-    return ((s.length===4||s.length===6)&&/^[0-9]+$/.test(s)) ? true : false;
+var n=12
+function solution(n) {
+    var answer = 0;
+    var i=1;
+    while(i<=n){
+        if(n%i ===0){
+            answer+=i
+        }
+        i++
+    }
+    return answer;
 }
-
-
+solution(n);
 
 </script>
 <body>
